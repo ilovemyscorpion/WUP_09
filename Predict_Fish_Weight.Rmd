@@ -69,7 +69,7 @@ summary.out$which[3,]
 ```
 
 ```{r}
-best.model <- lm(Weight~Length3+Width,data=Perchdata)
+best.model <- lm(Weight~Height+Width,data=Perchdata)
 fullup <- lm(Weight~.,data=Perchdata)
 summary(best.model)
 ```
@@ -133,7 +133,7 @@ summary(best.model)
 anova(fullup,best.model)
 ```
 
-
+The pvalue is too large to say that there is a difference between the best model that utilizes three variables and the best model that utilizes only two variables.
 
 # Smelt
 ## Methods
@@ -192,4 +192,4 @@ The pvalue is too large to say that there is a difference between the best model
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
 
-
+Based on the automated selection of the variables, there is no difference in using a model that utilizes only two variables versus the model that utilizes all of the variables. This was identified by the adjusted rsquared as well as the pvalue through a graphical depiction. In conclusion, the pvalues compared from the two variable models were so small that I reject the null hypothesis of these models being beneficial in predicting the weight of the fish. Since the pvalues of the anovas were large, therefore result in a failure to reject the null hypothesis. There in no difference in using a fullup model to a two variable model.
