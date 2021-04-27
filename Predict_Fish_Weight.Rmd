@@ -94,6 +94,11 @@ anova(fullup,best.model)
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
 
+```{r}
+Breamdata=filter(Fishdata,Species=="Bream")
+Breamdata = subset(Breamdata, selct= -Species)
+```
+
 #Results
 
 <!--Divide this section into two sub-sections:  One for your descriptive  results and one for your inferential results.!-->
@@ -117,6 +122,11 @@ anova(fullup,best.model)
 ## Methods
 
 <!--Decide on your methods:  use "variable analysis" or other appropriate descriptors.  Make sure to choose at least one graphical method and at least one numerical method.!-->
+
+```{r}
+Smeltdata=filter(Fishdata,Species=="Smelt")
+Smeltdata = subset(Smeltdata, selct= -Species)
+```
 
 #Results
 
