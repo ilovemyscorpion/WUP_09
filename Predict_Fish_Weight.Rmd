@@ -57,7 +57,9 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
 ```
   
-##Which is best??  
+## Which is best??  
+
+The best model utilizes two variables; H and W.
 
 ```{r}
 which.max(summary.out$adjr2)
@@ -67,14 +69,18 @@ summary.out$which[3,]
 ```
 
 ```{r}
-best.model <- lm(Weight~Height+Width,data=Perchdata)
+best.model <- lm(Weight~Length3+Width,data=Perchdata)
 fullup <- lm(Weight~.,data=Perchdata)
 summary(best.model)
 ```
 
+The pvalue is so small that it shows us that this model is an excellent fit.
+
 ```{r}
 anova(fullup,best.model)
 ```
+
+The pvalue is 0.879; this means that there is no difference between using the model that contains all of the data versus the model that only contains two variables from the data.
 
 # Bream
 ## Methods
@@ -106,7 +112,9 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
 ```
   
-##Which is best??  
+## Which is best??  
+
+The best model utilizes three variables; L1, H, and W.
 
 ```{r}
 which.max(summary.out$adjr2)
@@ -116,14 +124,15 @@ summary.out$which[3,]
 ```
 
 ```{r}
-best.model2 <- lm(Weight~Height+Width,data=Breamdata)
+best.model <- lm(Weight~Length2+Height,data=Breamdata)
 fullup <- lm(Weight~.,data=Breamdata)
-summary(best.model2)
+summary(best.model)
 ```
 
 ```{r}
-anova(fullup,best.model2)
+anova(fullup,best.model)
 ```
+
 
 
 # Smelt
@@ -156,7 +165,9 @@ library(car)
 subsets(regsubsets.out,statistic="adjr2",legend="bottomright",main="Adjusted R^2")
 ```
   
-##Which is best??  
+## Which is best??  
+
+The best model utilizes four variables; L1, L2, H and W.
 
 ```{r}
 which.max(summary.out$adjr2)
@@ -166,15 +177,16 @@ summary.out$which[3,]
 ```
 
 ```{r}
-best.model3 <- lm(Weight~Height+Width,data=Smeltdata)
+best.model <- lm(Weight~Length2+Width,data=Smeltdata)
 fullup <- lm(Weight~.,data=Smeltdata)
-summary(best.model3)
+summary(best.model)
 ```
 
 ```{r}
-anova(fullup,best.model3)
+anova(fullup,best.model)
 ```
 
+The pvalue is too large to say that there is a difference between the best model that uses four variables to the best model that only uses two variables.
 
 # Discussion and Conclusion
 
