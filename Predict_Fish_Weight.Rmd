@@ -2,10 +2,12 @@
 title: "Weight of Fish"
 author: "Amy Estrada"
 date: "Spring 2021"
-output: 
+output:
   html_document:
-    number_sections: true
-    toc: true
+    number_sections: yes
+    toc: yes
+  pdf_document:
+    toc: yes
 ---
 
 
@@ -32,7 +34,7 @@ Fishdata=read.csv(file="Fish.csv")
 
 ```{r}
 Perchdata=filter(Fishdata,Species=="Perch")
-Perchdata = subset(Perchdata, selct= -Species)
+Perchdata = subset(Perchdata, select= -Species)
 ```
 
 
@@ -80,7 +82,7 @@ summary.out$which[3,]
 ```
 
 ```{r}
-best.model <- lm(Weigth~Height+Width,data=Perchdata)
+best.model <- lm(Weight~Height+Width,data=Perchdata)
 fullup <- lm(Weight~.,data=Perchdata)
 summary(best.model)
 ```
@@ -96,7 +98,7 @@ anova(fullup,best.model)
 
 ```{r}
 Breamdata=filter(Fishdata,Species=="Bream")
-Breamdata = subset(Breamdata, selct= -Species)
+Breamdata = subset(Breamdata, select= -Species)
 ```
 
 #Results
@@ -125,7 +127,7 @@ Breamdata = subset(Breamdata, selct= -Species)
 
 ```{r}
 Smeltdata=filter(Fishdata,Species=="Smelt")
-Smeltdata = subset(Smeltdata, selct= -Species)
+Smeltdata = subset(Smeltdata, select= -Species)
 ```
 
 #Results
